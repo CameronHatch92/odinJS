@@ -22,3 +22,12 @@ h1{
     text-align: center;
     color: darkred;
 }
+
+#gameInfo{
+
+    background-color: olivedrab;
+    border: 2px black solid;
+    text-align: center;
+    width: 65%;
+    margin: 30px auto;
+}
