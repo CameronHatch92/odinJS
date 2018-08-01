@@ -1,3 +1,31 @@
 p {
-    color: red;
+    color: darkblue;
+    text-align: center;
+}
+button{
+    background-color: darkblue;
+    color: bisque; 
+    font-size: 20px;
+    display: block;
+    margin: 10px auto;
+
+}
+
+button:hover{
+    background-color: darkred;
+}
+.card {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 24.5%;
+    background-color: bisque;
+    border: 1px solid black;
+    border-radius: 2%;
+    margin: .25%; 
+}
+#addBook{
+    display: none;
+}
+#title{
+    width: 250px;
 }

@@ -5,8 +5,27 @@
         <link rel="stylesheet" href="library.css">
     </head>
     <body>
+        <button id="newBook" onclick="addForm()">NEW BOOK</button>
+        <div id="addBook">
+            <form  action="#" method="post" id="bookForm">
+                <fieldset name="book-info">
+                    <legend>Book Info</legend>
+                    <label for="book-title">Title</label>
+                    <input placeholder="Harry Potter and the Chamber of Secrets" type="text" id="title" name="book-title">
+                    <label for="author">Author</label>
+                    <input placeholder="J.K. Rowling" type="text" id="author" name="author">
+                    <label for="number-of-pages">Number of Pages</label>
+                    <input placeholder="251" type="text" id="numberOfPages" name="number-of-pages">
+                    <label for="have-you-read">Have you read this book?</label>
+                    <select name="have-you-read" id="have-you-read" required>
+                        <option value="read">I have read this book</option>
+                        <option value="not-read">I have not read this book</option>
+                    </select>
+                </fieldset> 
+                <button type="submit">Add to Library</button> 
+            </form>   
+        </div>
         <div id="bookContainer">
-            
         </div>
         <script src = "libraryProject.js">
         </script>
