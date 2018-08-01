@@ -19,15 +19,48 @@ myLibrary.push(Bible);
 function render(bookArray){
     let bookHTML = "";
     for (i=0; i<bookArray.length; i++){
-        bookHTML += `<div class="card"><p> ${myLibrary[i].title}</p>
+        bookHTML += `<div class="card" id="book${i}"><p> ${myLibrary[i].title}</p>
         <p> ${myLibrary[i].author}</p>
         <p> ${myLibrary[i].pages} pages </p>
-        <p> ${myLibrary[i].read}</p></div>`
+        <p> ${myLibrary[i].read}</p>
+        <button class="bookButton" onclick="removeBook(book${i})">Remove Book</button>
+        <button onclick="changeStatus(${i})">Read/Not Read</button></div>`
     }
     document.getElementById("bookContainer").innerHTML = bookHTML;
 }
 function addForm(){
     document.getElementById("addBook").style.display="block";
+}
+
+function addToLibrary(){
+    let title = document.getElementById("title").value;
+    let author = document.getElementById("author").value;
+    let numberOfPages = document.getElementById("numberOfPages").value;
+    let read = document.getElementById("have-you-read").value;
+    if(read==="read"){
+        read="I have read this book";
+    }else{
+        read="I have not read this book";
+    }
+    let newBook = new Book(title,author, numberOfPages, read);
+    myLibrary.push(newBook);
+    render(myLibrary);
+    document.getElementById("bookForm").reset();
+    document.getElementById("addBook").style.display= "none";
+}
+
+function removeBook(bookId){
+    let idToUse=bookId.id;
+    document.getElementById(idToUse).remove();
+}
+
+function changeStatus(index){
+    if(myLibrary[index].read==="I have read this book"){
+        myLibrary[index].read="I have not read this book";
+    }else{
+        myLibrary[index].read="I have read this book";
+    }
+    render(myLibrary);
 }
 
 render(myLibrary);
