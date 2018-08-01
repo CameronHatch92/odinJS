@@ -51,6 +51,8 @@ function addToLibrary(){
 
 function removeBook(bookId){
     let idToUse=bookId.id;
+    let index=idToUse.slice(4);
+    myLibrary.splice(index);
     document.getElementById(idToUse).remove();
 }
 
