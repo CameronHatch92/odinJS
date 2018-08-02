@@ -56,32 +56,40 @@ function checkForWin(){
     }
 
     if(gameBoard.boardArray[0]===gameBoard.boardArray[1]&&gameBoard.boardArray[1]===gameBoard.boardArray[2]&&gameBoard.boardArray[0]!=""){
-        document.getElementById("gameInfo").innerHTML=`<p id="gameEnd">Congratulations, ${winner.name}!!!
-        You have won!</p>`;
+        winProceduce(winner);
     }else if(gameBoard.boardArray[3]===gameBoard.boardArray[4]&&gameBoard.boardArray[4]===gameBoard.boardArray[5]&&gameBoard.boardArray[3]!=""){
-        document.getElementById("gameInfo").innerHTML=`<p id="gameEnd">Congratulations, ${winner.name}!!!
-        You have won!</p>`;
+        winProceduce(winner);
     }else if(gameBoard.boardArray[6]===gameBoard.boardArray[7]&&gameBoard.boardArray[7]===gameBoard.boardArray[8]&&gameBoard.boardArray[6]!=""){
-        document.getElementById("gameInfo").innerHTML=`<p id="gameEnd">Congratulations, ${winner.name}!!!
-        You have won!</p>`;
+        winProceduce(winner);
     }else if(gameBoard.boardArray[0]===gameBoard.boardArray[3]&&gameBoard.boardArray[3]===gameBoard.boardArray[6]&&gameBoard.boardArray[6]!=""){
-        document.getElementById("gameInfo").innerHTML=`<p id="gameEnd">Congratulations, ${winner.name}!!!
-        You have won!</p>`;
+        winProceduce(winner);
     }else if(gameBoard.boardArray[1]===gameBoard.boardArray[4]&&gameBoard.boardArray[4]===gameBoard.boardArray[7]&&gameBoard.boardArray[4]!=""){
-        document.getElementById("gameInfo").innerHTML=`<p id="gameEnd">Congratulations, ${winner.name}!!!
-        You have won!</p>`;
+        winProceduce(winner);
     }else if(gameBoard.boardArray[2]===gameBoard.boardArray[5]&&gameBoard.boardArray[5]===gameBoard.boardArray[8]&&gameBoard.boardArray[8]!=""){
-        document.getElementById("gameInfo").innerHTML=`<p id="gameEnd">Congratulations, ${winner.name}!!!
-        You have won!</p>`;
+        winProceduce(winner);
     }else if(gameBoard.boardArray[0]===gameBoard.boardArray[4]&&gameBoard.boardArray[4]===gameBoard.boardArray[8]&&gameBoard.boardArray[8]!=""){
-        document.getElementById("gameInfo").innerHTML=`<p id="gameEnd">Congratulations, ${winner.name}!!!
-        You have won!</p>`;
+        winProceduce(winner);
     }else if(gameBoard.boardArray[2]===gameBoard.boardArray[4]&&gameBoard.boardArray[4]===gameBoard.boardArray[6]&&gameBoard.boardArray[6]!=""){
-        document.getElementById("gameInfo").innerHTML=`<p id="gameEnd">Congratulations, ${winner.name}!!!
-        You have won!</p>`;
+        winProceduce(winner);
     } else if(gameBoard.boardArray.filter(elem => elem != "").length ===9){
-        document.getElementById("gameInfo").innerHTML=`<p id="gameEnd">It's a tie!!!</p>`;
+        document.getElementById("winInfo").style.display="block";
+        document.getElementById("winInfo").innerHTML=`<p id="gameEnd">It's a tie!</p>`;
+        document.getElementById("gameInfo").style.display = "none";
+        stopClick();
     }
+}
+
+function stopClick(){
+    for (let i=1; i<=9; i++){
+        document.getElementById(`square${i}`).onclick = function(){};
+    }
+};
+function winProceduce(person){
+    document.getElementById("winInfo").style.display="block";
+    document.getElementById("winInfo").innerHTML=`<p id="gameEnd">Congratulations, ${person.name}!!!
+    You have won!</p>`;
+    document.getElementById("gameInfo").style.display = "none";
+    stopClick();
 }
 const displayController = (()=>{
     const currentPlayer = (player) => player.name;
@@ -115,6 +123,8 @@ function updateBoard(){
 updateBoard();
 document.getElementById("gameBoard").style.display = "none";
 document.getElementById("gameInfo").style.display = "none";
+document.getElementById("winInfo").style.display = "none";
+let gameCount = 0;
 document.getElementById("startRestart").onclick = function(){
     for (let i=0; i<9; i++){
         gameBoard.boardArray[i]="";
@@ -123,7 +133,14 @@ document.getElementById("startRestart").onclick = function(){
     document.getElementById("gameBoard").style.display="block";
     document.getElementById("gameInfo").style.display="block";
     currPlay=playerOne;
-    getGameStatus(currPlay);
+    gameCount++;
+    if(gameCount%2===0){
+        firstPlayer=playerTwo;
+    }else{
+        firstPlayer=playerOne;
+    }
+    getGameStatus(firstPlayer);
     document.getElementById("playerInfo").style.display = "none";
+    document.getElementById("winInfo").style.display = "none";
 }
 

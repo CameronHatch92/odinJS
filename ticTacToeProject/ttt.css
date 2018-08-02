@@ -23,7 +23,7 @@ h1{
     color: darkred;
 }
 
-#gameInfo{
+#gameInfo, #winInfo{
 
     background-color: olivedrab;
     border: 2px black solid;
