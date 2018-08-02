@@ -30,4 +30,37 @@ h1{
     text-align: center;
     width: 65%;
     margin: 30px auto;
+    height: 100px;
+    font-size: 20px;
+}
+
+#gameEnd{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#startRestart{
+    display: block;
+    margin: 5px auto;
+    background-color: olivedrab;
+    height: 30px;
+    font-size: 20px;
+    color: darkred;
+}
+
+#startRestart:hover{
+    background-color: darkred;
+    color: olivedrab;
+
+}
+
+#playerInfo{
+    text-align: center;
+    background-color: lightcoral;
+    color: darkred;
+    padding: 20px;
+}
+
+label{
+    font-size: 20px;
 }
