@@ -1,13 +1,17 @@
+'use strict';
 let myLibrary = [];
 
-function Book(title, author, pages, read){
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.info = function(){
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`}
+class Book{
+    constructor (title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+    static info(){
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;}
 }
+
 
 function addBookToLibrary(newBook){
     myLibrary.push(newBook);
@@ -18,7 +22,7 @@ myLibrary.push(HP);
 myLibrary.push(Bible);
 function render(bookArray){
     let bookHTML = "";
-    for (i=0; i<bookArray.length; i++){
+    for (let i=0; i<bookArray.length; i++){
         bookHTML += `<div class="card" id="book${i}"><p> ${myLibrary[i].title}</p>
         <p> ${myLibrary[i].author}</p>
         <p> ${myLibrary[i].pages} pages </p>
