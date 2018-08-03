@@ -26,7 +26,7 @@ let currPlay = {};
 
 
 const gameBoard=(()=>{
-  const boardArray = ['', '', '', '', '', 'O', '', 'X', ''];
+  const boardArray = ['', '', '', '', '', '', '', '', ''];
   const setBoard = () => {
     for (let i=0; i<9; i++){
       document.getElementById(`square${i+1}`).innerHTML= boardArray[i];
@@ -73,7 +73,7 @@ function checkForWin(){
     winProceduce(winner);
   }else if(gameBoard.boardArray[2]===gameBoard.boardArray[4]&&gameBoard.boardArray[4]===gameBoard.boardArray[6]&&gameBoard.boardArray[6]!=''){
     winProceduce(winner);
-  } else if(gameBoard.boardArray.filter(elem => elem != '').length ===9){
+  } else if(gameBoard.boardArray.filter(elem => elem !== '').length ===9){
     document.getElementById('winInfo').style.display='block';
     document.getElementById('winInfo').innerHTML='<p id="gameEnd">It\'s a tie!</p>';
     document.getElementById('gameInfo').style.display = 'none';
@@ -134,7 +134,6 @@ document.getElementById('startRestart').onclick = function(){
   updateBoard();
   document.getElementById('gameBoard').style.display='block';
   document.getElementById('gameInfo').style.display='block';
-  currPlay=playerOne;
   gameCount++;
   let firstPlayer={};
   if(gameCount%2===0){
@@ -142,6 +141,7 @@ document.getElementById('startRestart').onclick = function(){
   }else{
     firstPlayer=playerOne;
   }
+  currPlay=firstPlayer;
   getGameStatus(firstPlayer);
   document.getElementById('playerInfo').style.display = 'none';
   document.getElementById('winInfo').style.display = 'none';
