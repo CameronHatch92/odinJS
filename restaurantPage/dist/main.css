@@ -1,0 +1,15 @@
+body{
+    background-color: lightyellow;
+    color: red;
+    text-align: center;
+    font-family: 'Kalam'; 
+}
+
+h1{
+    font-size: 40px;
+    text-emphasis: bold;
+    margin-bottom: -20px;
+}
+h2{
+    font-size: 25px;
+}
