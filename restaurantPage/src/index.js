@@ -1,6 +1,5 @@
-import {heading, subheading, addImage, addBlurb} from './createHeading'
+import {createHomePage} from './createHeading'
+import {menuBar} from './menuBar'
 
-heading('content');
-subheading('content');
-addImage('content');
-addBlurb('content');
+menuBar('content');
+// createHomePage('content');

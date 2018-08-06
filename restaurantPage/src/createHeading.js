@@ -1,32 +1,34 @@
 'use strict';
-function heading(divId){
+function heading(){
     let header = document.createElement('h1');
     header.innerHTML='Snooze:';
-    document.getElementById(divId).appendChild(header);
+    return header;
 }
 
-function subheading(divId){
+function subheading(){
     let subheader = document.createElement('h2');
     subheader.innerHTML = 'An A.M. Eatery';
-    document.getElementById(divId).appendChild(subheader);
 }
 
-function addImage(divId){
+function addImage(){
     let foodImage = document.createElement('img');
     foodImage.src = 'http://www.restaurantnutrition.com/getattachment/Insights/Snooze-Eatery-How-a-Moment-Makes-the-Difference/Snooze-meal-min.jpg.aspx?width=600&height=287';
     foodImage.alt = 'picture of delicious breakfast food';
-    document.getElementById(divId).appendChild(foodImage);
+    return foodImage;
 }
 
-function addBlurb(divId){
+function addBlurb(){
     let blurb = document.createElement('p');
     blurb.innerHTML = "The best breakfast you've ever had!";
-    document.getElementById(divId).appendChild(blurb);
+    return blurb;
 }
 
+function createHomePage(divId){
+    document.getElementById(divId).appendChild(heading());
+    document.getElementById(divId).appendChild(subheading());
+    document.getElementById(divId).appendChild(addImage());
+    document.getElementById(divId).appendChild(addBlurb());
+}
 export{
-    heading,
-    subheading,
-    addImage,
-    addBlurb
+    createHomePage
 }
