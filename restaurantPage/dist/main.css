@@ -14,6 +14,29 @@ h2{
     font-size: 25px;
 }
 
+#menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
 .navButton{
     color: red;
+    background-color: yellow;
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid black;
 }
+
+.navButton:hover{
+    background-color: lightyellow;
+    border-bottom: 0;
+}
+
+#menu p:nth-child(1):hover{
+    border-left: 0;
+}
+
+#menu p:nth-child(3):hover{
+    border-right: 0;
+}
+

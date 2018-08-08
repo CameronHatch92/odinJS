@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 function heading(){
     let header = document.createElement('h1');
     header.innerHTML='Snooze:';
@@ -8,6 +8,7 @@ function heading(){
 function subheading(){
     let subheader = document.createElement('h2');
     subheader.innerHTML = 'An A.M. Eatery';
+    return subheader;
 }
 
 function addImage(){
@@ -29,6 +30,7 @@ function createHomePage(divId){
     document.getElementById(divId).appendChild(addImage());
     document.getElementById(divId).appendChild(addBlurb());
 }
+
 export{
     createHomePage
 }
