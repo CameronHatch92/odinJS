@@ -8,35 +8,34 @@ body{
 h1{
     font-size: 40px;
     text-emphasis: bold;
-    margin-bottom: -20px;
 }
 h2{
     font-size: 25px;
+    margin-top: -20px;
 }
 
 #menu{
     position: fixed;
-    top: 0;
+    top: -16px;
     left: 0;
 }
 .navButton{
     color: red;
-    background-color: yellow;
+    background-color: lightsteelblue;
     display: inline-block;
     padding: 5px;
     border: 1px solid black;
 }
 
-.navButton:hover{
+.currentTab{
+    color: red;
     background-color: lightyellow;
-    border-bottom: 0;
+    display: inline-block;
+    padding: 5px;
+    border: 0;
 }
 
-#menu p:nth-child(1):hover{
-    border-left: 0;
-}
 
-#menu p:nth-child(3):hover{
-    border-right: 0;
-}
+
+
 
