@@ -31,6 +31,15 @@ function createHomePage(divId){
     document.getElementById(divId).appendChild(addBlurb());
 }
 
+function reloadHome(divId){
+    document.getElementById(divId).innerHTML = '';
+    createHomePage(divId);
+    document.getElementById('Home').className = 'currentTab';
+    document.getElementById('Tab').className = 'navButton';
+    document.getElementById('Contact').className = 'navButton';
+}
+
 export{
-    createHomePage
+    createHomePage,
+    reloadHome
 }
